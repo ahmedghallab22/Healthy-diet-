@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'quicksand', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.conrtainer{
+    max-width: 1100px;
+    margin:  auto;
+}
+
+/* Utility Classes */
+.primary-text{
+    color: #e4b95b;
+}
+
+.btn{
+    display: inline-block;
+    padding: 15px 30px; ;
+    border: none;
+    border-radius: 15px;
+}
+
+.btn-primary{
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+
+
+.btn-secondary{
+    color: aliceblue;
+    background-color: #383848;
+    margin-top: 2rem;
+}
+
+
+.btn-primary:hover , .btn-secondary:hover{
+    background-color:  #e4b95b;
+}
+
+/*header Start */
+header{
+    height: 100vh;
+    background: url(Healthy_Habits_Start_Here.png) center center/cover no-repeat; 
+    position: relative;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#navbar img{
+    width: 80px;
+}
+
+#navbar ul{
+    display: flex;
+    margin-left: 100px;
+}
+
+#navbar ul li a{
+    padding: 15px  20px;
+    color: aliceblue;
+    font-weight: 600;
+}
+
+#navbar ul li a:hover{
+    border-bottom: 2px solid #e4b95b;
+}
+
+header .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+}
+
+header .content .box {
+    margin-bottom: 20px;
+}
+
+header .content h1{
+    font-size: 40px;
+    color: aliceblue;
+}
+
+header .content p{
+    margin: 20px 0 40px;
+    color: aliceblue;
+}
+
+header::before{
+    content:"" ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+header *{
+    z-index: 10;
+}
+
+/* النسبة المئوية */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background: #020438;
+    font: 14px/1 'Open Sans', helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.box {
+    height: 280px;
+    width: 280px;
+    background: #ffffff;
+    border-radius: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.percent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #130000;
+    font-size: 64px;
+}
+
+.water {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    transform: translate(0, 100%);
+    background: #e4b95b;
+    transition: all .3s;
+}
+
+.water_wave {
+    width: 200%;
+    position: absolute;
+    bottom: 100%;
+}
+
+.water_wave_back {
+    right: 0;
+    fill: #C7EEFF;
+    animation: wave-back 1.4s infinite linear;
+}
+
+.water_wave_front {
+    left: 0;
+    fill: #ccc;
+    margin-bottom: -1px;
+    animation: wave-front .7s infinite linear;
+}
+
+@keyframes wave-front {
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes wave-back {
+    100% {
+        transform: translate(50%, 0);
+    }
+}

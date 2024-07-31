@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Information</title>
+    <style>
+        /* أسلوب الصفحة */
+        body {
+            background-color: #c9d6ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            display: block;
+            width: calc(100% - 30px);
+            margin: 10px auto;
+            padding: 10px 15px;
+            background-color: #eee;
+            border: none;
+            font-size: 14px;
+            border-radius: 8px;
+            outline: none;
+            text-align: center;
+        }
+        button {
+            background-color: #512da8;
+            color: #fff;
+            font-size: 14px;
+            padding: 10px 45px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        /* صفحة الانتظار */
+        .loading-page {
+            display: none;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .loading-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return waitForTransition(event)">
+        <span>Type Your Info</span>
+        <input type="number" id="height" placeholder="Height(Cm)" required>
+        <input type="number" id="age" placeholder="Age" required>
+        <input type="number" id="weight" placeholder="Weight(Kg)" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <center>
+        <div class="loading-page" id="loadingPage">
+            <div class="loading-icon">⌛</div>
+            Please wait...
+        </div>
+    </center>
+    <script>
+        function waitForTransition(event) {
+            // منع الإرسال الافتراضي للنموذج
+            event.preventDefault();
+
+            // الحصول على القيم المدخلة
+            var height = document.getElementById("height").value;
+            var age = document.getElementById("age").value;
+            var weight = document.getElementById("weight").value;
+
+            // تحقق من ملء جميع الحقول
+            if (height && age && weight) {
+                // عرض صفحة الانتظار
+                document.getElementById("loadingPage").style.display = "block";
+
+                // انتظر 5 ثوانٍ ثم قم بالانتقال إلى صفحة الـ "diet.html"
+                setTimeout(function() {
+                    window.location.href = "index (1).html";
+                }, 5000); // 5000 مللي ثانية = 5 ثوانٍ
+            } else {
+                alert("يرجى ملء جميع الحقول");
+            }
+        }
+    </script>
+</body>
+</html>
